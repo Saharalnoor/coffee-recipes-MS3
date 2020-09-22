@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+.hero-container{
+    height: 60vh;
+    background-image:  url(../img/hero-image.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    display: flex;
+    text-align: left;
+    justify-content: left;
+    bottom: 0;
+    position: relative;
+}
+
+/* Overlay */
+.opaque-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Jumbotron */
+
+.jumbotron {
+    background-color: transparent;
+}
+
+.jumbotron-header {
+    margin: 20vh 0 10vh 0;
+    margin-bottom: 60px;
+    text-align: center;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+    color: #ffff;
+}
+
