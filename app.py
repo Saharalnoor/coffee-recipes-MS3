@@ -58,17 +58,17 @@ def insert_recipe():
 
     new_recipe = {
         'category_name': request.form.get('category_name'),
-        'coffe_name': request.form.get('coffe_name'),
+        'coffee_name': request.form.get('coffee_name'),
         'image_link': request.form.get('image_link'),
         'prep_time': request.form.get('prep_time'),
-        'cook_time': request.form.get('cook_time'),
+        'cooking_time': request.form.get('cooking_time'),
         'ingredients': ingredients,
         'directions': directions,
-        'yields': request.form.get('yields'),
+        'yield': request.form.get('yield'),
     }
 
     inserted_recipe = recipes.insert_one(new_recipe)
-    return redirect(url_for('recipe_details', 
+    return redirect(url_for('recipe_details',
                     recipe_id=inserted_recipe.inserted_id))
 
 
@@ -84,19 +84,23 @@ def edit_recipe(recipe_id):
 
 @app.route("/update_recipe/<recipe_id>", methods=["POST"])
 def update_recipe(recipe_id):
+
     recipes = mongo.db.recipes
+    ingredients = request.form.get("ingredients").splitlines()
+    directions = request.form.get("directions").splitlines()
 
     recipes.update({"_id": ObjectId(recipe_id)}, {
         'category_name': request.form.get('category_name'),
-        'coffe_name': request.form.get('coffe_name'),
+        'coffee_name': request.form.get('coffee_name'),
         'image_link': request.form.get('image_link'),
         'prep_time': request.form.get('prep_time'),
         'cook_time': request.form.get('cook_time'),
-        'ingredients': request.form.get('ingredients'),
-        'direction': request.form.get('direction'),
+        'ingredients': ingredients,
+        'directions': directions,
         'yields': request.form.get('yields'),
         })
-    return redirect(url_for("view_recipe", recipe_id=recipe_id))
+    return redirect(url_for("view_recipe_details",
+                    recipe_id=recipe_id))
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'), 
