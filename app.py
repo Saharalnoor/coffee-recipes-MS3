@@ -49,7 +49,7 @@ def add_recipes():
                            page_title="Add Your Own Recipe")
 
 
-@app.route('/insert_recipe', methods=['GET', 'POST'])
+@app.route('/insert_recipe', methods=['POST'])
 def insert_recipe():
 
     recipes = mongo.db.recipes
@@ -67,9 +67,10 @@ def insert_recipe():
         'yields': request.form.get('yields'),
     }
 
-    recipes.insert_one(new_recipe)
-    return render_template(
-        'recipe_details.html', recipe=new_recipe)
+    inserted_recipe = recipes.insert_one(new_recipe)
+    return redirect(url_for('recipe_details', 
+                    recipe_id=inserted_recipe.inserted_id))
+
 
 @app.route('/edit_recipe/<recipe_id>')
 def edit_recipe(recipe_id):
