@@ -7,11 +7,12 @@
 	 <form action="{{url_for('update_recipe', recipe_id=recipe._id)}}" method="POST" name="updateRecipe" id="updateRecipe">
 		<div class="row">
             
-            <!--The category of the recipe-->
-       <div class="input-field col s12">
+           <!--The category of the recipe-->
+          <div class="input-field col s12">
+                  <i class="material-icons prefix">assignment</i>
                 <select id="category" name="category_name">
                   <option value="" disabled selected>Choose Category</option>
-                  {% for cat in categories %}
+                  {% for cat in all_categories %}
                       <option value="{{cat.category_name}}">{{cat.category_name}}</option>
                   {% endfor %}
                 </select>
@@ -23,41 +24,41 @@
          <!--The title of the recipe-->
         <div class="input-field col s12">
             <i class="material-icons prefix">mode_edit</i>
-            <input id="coffe_name" maxlength="25" name="recipe_title" type="text" class="validate" required>
-            <label for="coffe_name">Coffee Name</label>
+            <input id="coffee_name" maxlength="25" name="coffee_name" type="text" class="validate" required>
+            <label for="coffee_name">Coffee Name</label>
         </div>
     
-    </div>
+    </div> 
 
      <!--The path to the recipe's image-->
     <div class="row">
           <div class="input-field col s12 l6 xl4">
             <i class="material-icons prefix">add_a_photo</i>
-            <input id="image_path" name="image_path" type="url" class="validate">
-            <label for="image_path">URL of Image</label>
+            <input id="image_link" name="image_link" type="url" class="validate">
+            <label for="image_link">URL of Image</label>
         </div>
     </div>
 
     <div class="row">
                      
         <!--The time needed to prepare the recipe-->
-        <div class="input-field col s12 m6 l4">
+        <div class="input-field col s12 m6">
             <i class="material-icons prefix">timer</i>
             <input id="prep_time" name="prep_time" type="number" class="validate">
             <label for="prep_time">Preparation Time</label>
         </div>
 
         <!--The time needed to cook the recipe-->
-       <div class="input-field col s12 m6 l4">
+       <div class="input-field col s12 m6">
               <i class="material-icons prefix">timer</i>
-            <input id="cook_time" name="cook_time" type="number" class="validate">
-            <label for="cook_time">Cook Time</label>
+            <input id="cooking_time" name="cooking_time" type="number" class="validate">
+            <label for="cooking_time">Cooking Time</label>
         </div>
         <!--The number of servings -->
-        <div class="input-field col s12 m6 l4">
+        <div class="input-field col s12 m6">
             <i class="material-icons prefix">restaurant</i>
-            <input id="servings" name="servings" type="number" class="validate">
-            <label for="servings">Yields</label>
+            <input id="yield" name="yield" type="number" class="validate">
+            <label for="yield">Yields</label>
         </div>
 
     </div>
@@ -71,12 +72,12 @@
         </div>
     </div> 
 
-     <!--Input field for the description-->
+     <!--Input field for the direction-->
     <div class="row">
         <div class="input-field col s12">
             <i class = "material-icons prefix">format_list_numbered</i>
-            <textarea id="method" name="method" class="materialize-textarea" required></textarea>
-            <label for="method">Description</label>
+            <textarea id="directions" name="directions" class="materialize-textarea" required></textarea>
+            <label for="directions">Directions</label>
         </div>
     </div> 
 

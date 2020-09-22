@@ -40,16 +40,19 @@
         <div class="col s12 m8">
             <h3 class="details-heading text-uppercase center-align">Direction</h3>
             <ol class="list-items">
-                {% for directions in recipe.direction %}
+                {% for direction in recipe.directions %}
                 <li>
-                    {{ directions }}
+                    {{ direction }}
                 </li>
                 {% endfor %}
             </ol>
         </div>
     </div>
+
+    
 </div>
-      </div>
+
+</div>
 
 
 {% endblock %}
