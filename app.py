@@ -48,6 +48,30 @@ def add_recipes():
                            all_categories=all_categories,
                            page_title="Add Your Own Recipe")
 
+
+@app.route('/insert_recipe', methods=['GET', 'POST'])
+def insert_recipe():
+
+    recipes = mongo.db.recipes
+    ingredients = request.form.get("ingredients").splitlines()
+    directions = request.form.get("directions").splitlines()
+
+    new_recipe = {
+        'category_name': request.form.get('category_name'),
+        'coffe_name': request.form.get('coffe_name'),
+        'image_link': request.form.get('image_link'),
+        'prep_time': request.form.get('prep_time'),
+        'cook_time': request.form.get('cook_time'),
+        'ingredients': ingredients,
+        'directions': directions,
+        'yields': request.form.get('yields'),
+    }
+
+    recipes.insert_one(new_recipe)
+    return render_template(
+        'recipe_details.html', recipe=new_recipe)
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'), 
             port=int(os.environ.get('PORT')), debug=True)
