@@ -86,6 +86,100 @@ nav ul li:hover, nav ul li.active {
     -o-transition: all 0.35s ease-in-out;
 }
 
+/*buttons*/
+
+.btn-light{
+    background-color: #da4003;
+}
+
+.btn-form{
+    margin-top: 0;
+    margin-bottom: 60px;
+    width: 90%;
+}
+
+.Add-recipe-heading{
+    color:#da4003;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+}
+.coffee-title{
+    color:#3d2e18;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    font-size: 3em;
+}
+.coffee-name{
+    color:#da4003;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+    font-size: 3em;
+}
+
+.recipe-image{
+    padding: 1rem;
+    border-radius: 25px;
+    align-items: center;
+}
+
+
+.recipe-detail-title {
+    display: inline-block;
+    color: #da4003;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 1.3em;
+}
+
+.recipe-details {
+    color:black;
+    font-size: 1.2em;
+    font-family: sans-serif;
+}
+
+.details-heading{
+    font-weight: 500;
+    font-size: 2rem;
+    color: #da4003;
+}
+
+blockquote{
+    border-left: 5px solid #e95b22;
+}
+
+.bullet-point-icon{
+    font-size:5px;
+    margin-right:10px;
+}
+
+.list-items{
+    padding: 10px;
+    font-size: 1.2rem;
+    line-height: 1.9rem;
+}
+
+.material-icons{
+    font-size: 35px;
+    color: #da4003;
+
+}
+
+
+.input-field {
+     font-family: "Open Sans", sans-serif;
+     color: #000 !important; /*!important is used to override the Materialize CSS*/
+   }
+   
+   .input-field label {
+     font-family: inherit;
+     color: inherit;
+   }
+
+label {
+     font-family: inherit;
+     font-size: inherit;
+     color: inherit;
+}
 
 /* footer */
 .footer-container {
