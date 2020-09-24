@@ -4,7 +4,7 @@
 
 	<h3 class="edit-recipe-heading text-align center text-uppercase ">Edit Recipe {{recipe.coffee_name}}</h3>
 
-	 <form action="{{url_for('update_recipe', recipe_id=recipe._id)}}" method="POST" name="updateRecipe" id="updateRecipe">
+	 <form action="{{url_for('update_recipe',recipe_id=recipe._id)}}" method="POST" name="updateRecipe" id="updateRecipe">
 		<div class="row">
             
            <!--The category of the recipe-->
@@ -24,7 +24,7 @@
          <!--The title of the recipe-->
         <div class="input-field col s12">
             <i class="material-icons prefix">mode_edit</i>
-            <input id="coffee_name" maxlength="25" name="coffee_name" type="text" class="validate" required>
+            <input id="coffee_name" maxlength="25" name="coffee_name" value="{{recipe.coffee_name}}" type="text" class="validate" required>
             <label for="coffee_name">Coffee Name</label>
         </div>
     
@@ -34,7 +34,7 @@
     <div class="row">
           <div class="input-field col s12 l6 xl4">
             <i class="material-icons prefix">add_a_photo</i>
-            <input id="image_link" name="image_link" type="url" class="validate">
+            <input id="image_link" name="image_link" value="{{recipe.image_link}}" type="url" class="validate">
             <label for="image_link">URL of Image</label>
         </div>
     </div>
@@ -44,20 +44,20 @@
         <!--The time needed to prepare the recipe-->
         <div class="input-field col s12 m6">
             <i class="material-icons prefix">timer</i>
-            <input id="prep_time" name="prep_time" type="number" class="validate">
+            <input id="prep_time" name="prep_time" value="{{recipe.prep_time}}" type="text" class="validate">
             <label for="prep_time">Preparation Time</label>
         </div>
 
         <!--The time needed to cook the recipe-->
        <div class="input-field col s12 m6">
               <i class="material-icons prefix">timer</i>
-            <input id="cooking_time" name="cooking_time" type="number" class="validate">
+            <input id="cooking_time" name="cooking_time" value="{{recipe.cooking_time}}" type="text" class="validate" >
             <label for="cooking_time">Cooking Time</label>
         </div>
         <!--The number of servings -->
         <div class="input-field col s12 m6">
             <i class="material-icons prefix">restaurant</i>
-            <input id="yield" name="yield" type="number" class="validate">
+            <input id="yield" name="yield" value="{{ recipe.yield }}" type="text" class="validate">
             <label for="yield">Yields</label>
         </div>
 
@@ -67,7 +67,10 @@
     <div class="row">
         <div class="input-field col s12">
             <i class="material-icons prefix">format_list_bulleted</i>
-            <textarea id="ingredients" name="ingredients" class="materialize-textarea" required></textarea>
+            <textarea id="ingredients" name="ingredients" class="materialize-textarea" required maxlength="3000">
+            {% for ingredient in recipe.ingredients -%}
+                {{ ingredient }}
+            {% endfor -%}</textarea>
             <label for="ingredients">Ingredients</label>
         </div>
     </div> 
@@ -76,7 +79,11 @@
     <div class="row">
         <div class="input-field col s12">
             <i class = "material-icons prefix">format_list_numbered</i>
-            <textarea id="directions" name="directions" class="materialize-textarea" required></textarea>
+            <textarea id="directions" name="directions" class="materialize-textarea" required>
+            {% for direction in recipe.directions -%}
+                {{ direction }}
+            {% endfor -%}
+            </textarea>
             <label for="directions">Directions</label>
         </div>
     </div> 
@@ -92,7 +99,7 @@
 			<button class="btn z-depth-2 btn-form btn-light waves-effect waves-light" type="submit" name="action">Submit
 		        </button>
 		</div>
-		</div>
+</div>
 </form>
                     
 </section>

@@ -88,7 +88,7 @@ nav ul li:hover, nav ul li.active {
 
 /*buttons*/
 
-.btn-light{
+.btn-light, .btn-edit-del{
     background-color: #da4003;
 }
 
