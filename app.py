@@ -86,6 +86,7 @@ def edit_recipe(recipe_id):
 def update_recipe(recipe_id):
 
     recipes = mongo.db.recipes
+
     ingredients = request.form.get("ingredients").splitlines()
     directions = request.form.get("directions").splitlines()
 
@@ -94,12 +95,21 @@ def update_recipe(recipe_id):
         'coffee_name': request.form.get('coffee_name'),
         'image_link': request.form.get('image_link'),
         'prep_time': request.form.get('prep_time'),
-        'cook_time': request.form.get('cook_time'),
+        'cooking_time': request.form.get('cooking_time'),
         'ingredients': ingredients,
         'directions': directions,
-        'yields': request.form.get('yields'),
+        'yield': request.form.get('yield'),
         })
-    return redirect(url_for("view_recipe_details",
+
+    return redirect(url_for("recipe_details",
+                    recipe_id=recipe_id))
+
+
+@app.route('/delete_recipe/<recipe_id>', methods=['GET', 'POST'])
+def delete_recipe(recipe_id):
+
+    mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
+    return redirect(url_for('home',
                     recipe_id=recipe_id))
 
 if __name__ == '__main__':
