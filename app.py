@@ -20,8 +20,17 @@ mongo = PyMongo(app)
 
 @app.route("/")
 def home():
-    return render_template("index.html", page_title="Home")
+    '''
+    Landing Page
+    '''
 
+    return render_template("index.html", page_title="Home"
+    
+    '''
+    RECIPES ROUTES
+    '''
+
+# To view recipes by Categories
 
 @app.route("/view_recipe_category/<selected_category>")
 def view_recipe_category(selected_category):
@@ -31,6 +40,7 @@ def view_recipe_category(selected_category):
                            selected_category=selected_category,
                            page_title=selected_category + "Recipes")
 
+# Recipe details
 
 @app.route("/recipe_details/<recipe_id>")
 def recipe_details(recipe_id):
@@ -39,7 +49,7 @@ def recipe_details(recipe_id):
                            recipe=the_recipe,
                            page_title="Recipe Details")
 
-
+# Add Recipes
 @app.route("/add_recipes/")
 def add_recipes():
     all_categories = mongo.db.categories.find()
@@ -48,7 +58,7 @@ def add_recipes():
                            all_categories=all_categories,
                            page_title="Add Your Own Recipe")
 
-
+# Insert Recipes
 @app.route('/insert_recipe', methods=['POST'])
 def insert_recipe():
 
@@ -71,7 +81,7 @@ def insert_recipe():
     return redirect(url_for('recipe_details',
                     recipe_id=inserted_recipe.inserted_id))
 
-
+# Edit Recipes
 @app.route('/edit_recipe/<recipe_id>')
 def edit_recipe(recipe_id):
 
@@ -104,7 +114,7 @@ def update_recipe(recipe_id):
     return redirect(url_for("recipe_details",
                     recipe_id=recipe_id))
 
-
+# Delete Recipes
 @app.route('/delete_recipe/<recipe_id>', methods=['GET', 'POST'])
 def delete_recipe(recipe_id):
 
@@ -114,4 +124,4 @@ def delete_recipe(recipe_id):
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'), 
-            port=int(os.environ.get('PORT')), debug=True)
+            port=int(os.environ.get('PORT')), debug=False)
