@@ -24,14 +24,14 @@ def home():
     Landing Page
     '''
 
-    return render_template("index.html", page_title="Home"
-    
+    return render_template("index.html", page_title="Home")
+
     '''
     RECIPES ROUTES
     '''
 
-# To view recipes by Categories
 
+# To view recipes by Categories
 @app.route("/view_recipe_category/<selected_category>")
 def view_recipe_category(selected_category):
     all_recipes = mongo.db.recipes.find()
@@ -40,14 +40,15 @@ def view_recipe_category(selected_category):
                            selected_category=selected_category,
                            page_title=selected_category + "Recipes")
 
-# Recipe details
 
+# Recipe details
 @app.route("/recipe_details/<recipe_id>")
 def recipe_details(recipe_id):
     the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     return render_template("recipe_details.html",
                            recipe=the_recipe,
                            page_title="Recipe Details")
+
 
 # Add Recipes
 @app.route("/add_recipes/")
@@ -57,6 +58,7 @@ def add_recipes():
     return render_template("add_recipes.html",
                            all_categories=all_categories,
                            page_title="Add Your Own Recipe")
+
 
 # Insert Recipes
 @app.route('/insert_recipe', methods=['POST'])
@@ -80,6 +82,7 @@ def insert_recipe():
     inserted_recipe = recipes.insert_one(new_recipe)
     return redirect(url_for('recipe_details',
                     recipe_id=inserted_recipe.inserted_id))
+
 
 # Edit Recipes
 @app.route('/edit_recipe/<recipe_id>')
