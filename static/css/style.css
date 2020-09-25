@@ -86,6 +86,7 @@ nav ul li:hover, nav ul li.active {
     -o-transition: all 0.35s ease-in-out;
 }
 
+
 /*buttons*/
 
 .btn-light, .btn-edit-del{
@@ -103,6 +104,23 @@ nav ul li:hover, nav ul li.active {
     font-weight: 400;
     font-family: 'Roboto', sans-serif;
 }
+
+.sub-title {
+    font-family: sans-serif;
+    color: #da4003;
+} 
+
+.title-description{
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.features-name{
+    color:#3d2e18;
+    font-size: 30px
+}
+
 .coffee-title{
     color:#3d2e18;
     font-weight: 500;
@@ -121,7 +139,6 @@ nav ul li:hover, nav ul li.active {
     border-radius: 25px;
     align-items: center;
 }
-
 
 .recipe-detail-title {
     display: inline-block;
@@ -164,6 +181,12 @@ blockquote{
 
 }
 
+.icon-container {
+  padding: 0 15px;
+}
+.icon-container .material-icons {
+  font-size: inherit;
+}
 
 .input-field {
      font-family: "Open Sans", sans-serif;
@@ -181,6 +204,19 @@ label {
      color: inherit;
 }
 
+.block-divider {
+    width: 75px;
+    height: 5px;
+    border: 0;
+}
+
+.block-divider--green-yellow {
+    background-color: #3d2e18;
+}
+
+.block-divider--short {
+    width: 35px;
+}
 /* footer */
 .footer-container {
     background-color: #da4003;
