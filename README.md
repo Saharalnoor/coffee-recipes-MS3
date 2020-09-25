@@ -1,10 +1,11 @@
-![Coffee House](static/css/img/coffee-house-logo.png)
+![Coffee House](readMeDocs/coffeeLogo/coffee-logo.png)
 
 ## Data Centric Milestone Project
 
 Coffee House is my third Milestone Project that is a recipe online book which show different kinds of coffee recipes with 2 different categories. This project is allows users to create, read, update and delete. (CRUD)
 
-![multiple different screen sizes](wireframe/coffee-house-mockups.png)
+![multiple different screen sizes](readMeDocs/mockups/coffee-house-mockups.png)
+Live site click [Here](https://coffee-recipes-ms3.herokuapp.com//)
 
 ## UX
 
@@ -29,8 +30,8 @@ ________________________________________________________________________________
 
 ## Wireframes
 
-* [Wireframe-Mobile](wireframe/Coffee-house-wireframe-mobile.pdf)
-* [Wireframe-Desktop](wireframe/Coffee-house-wireframe-desktop.pdf)
+* [Wireframe-Mobile](readMeDocs/wireframes/Coffee-house-wireframe-mobile.pdf)
+* [Wireframe-Desktop](readMeDocs/wireframes/Coffee-house-wireframe-desktop.pdf)
 
 ### Existing Features 
 
@@ -83,6 +84,8 @@ There are a lot of features left to implement on this website to improve it more
 - PyMongo - for Python to get access the MongoDB database.
 - Jinja 2.10.1 - templating language for Python, to display back-end data in HTML.
 
+## Testing
+
 ### Responsiveness
 
 The responsiveness of the website has been tested across a range of devices (Galaxy S5, Iphone 5/6/7/8/X, IPad, IPad Pro and Desktop PC) using **Google Chrome Developer Tools**
@@ -105,6 +108,11 @@ Desktops/ Laptops
 - Edge: Works as intended.
 - Safari: Works as intended.
 
+### Functionality Failures
+Due to Limited time in my end, there are some problems that has been not fix, yet I will surely fix in the future.
+- The mobile navbar got some problem in my final testing, which the burger menu is not function.
+- The editing is having some malfunction in which the ingredients and direction is being indented and adding bullets and numbers after submitting.
+- The icons at Home page and 3 recipe details in adding recipe form feature is not aligning good when it is in mobile view.
 
 ## Deployment
 
@@ -226,11 +234,13 @@ I got an inspiration for this project from Task Manager Mini Project, MyCookbook
 
 I would like to thank these persons for helping to make this project.
 
+- To my Husband, family, and friends for their never-ending support and understanding through out my difficult times, and for giving me courage to continue my studies.
+
 - My mentor Brian Macharia for guiding me through out the process of this project.
 
 - My Friend Siti Safura for influencing me to be a coffee lover, where I get the idea of making a Coffee Recipe Website
 
-- The Tutor who guided and helped me for all of my questions 
+- The Tutors who guided and helped me for all of my questions and for their patiences
 
     - Scott
     - Anna
@@ -239,7 +249,7 @@ I would like to thank these persons for helping to make this project.
     - Haley
     - Samantha
     - Johann
-    
+
 - Slacks Community
 
 
